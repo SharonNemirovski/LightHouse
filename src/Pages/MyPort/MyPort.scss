@@ -1,0 +1,145 @@
+body {
+  background-color: #d8dfe5;
+}
+
+.Main {
+  height: 95vh;
+  width: 93vw;
+
+  .header {
+    height: 5vh;
+    width: 30vw;
+    background-color: #323d41;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 1.5vh;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  .Switch {
+    background-color: #fefefe;
+    height: 18vh;
+    width: 72vw;
+    margin: 0 auto;
+    box-shadow: 0 12px 18px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: #f4f5f7a8;
+    backdrop-filter: blur(5px);
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+
+      .portsName {
+        text-align: center;
+      }
+
+      ul {
+        list-style: none;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: repeat(2, 1fr);
+        padding-inline-start: 0px;
+        li {
+          margin: 1px;
+        }
+        .pic {
+          margin-right: 3vw;
+        }
+        .PortStatus {
+          img {
+            width: 1.7vw;
+            height: 2.5vh;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  //############ MyPort DIV ##############
+  .dataHolder {
+    display: grid;
+    width: 72vw;
+    height: 50vh;
+    margin: 0 auto;
+    margin-top: 1.5vh;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2vh;
+
+    .openMyPort {
+      background-color: #fefefe;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      .portTable {
+        display: grid;
+        background-color: #323d41;
+        border-radius: 5px;
+        height: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        .portArt {
+          background-color: #323d41;
+          height: 90%;
+          margin-top: 7.5%;
+          border-radius: 5px;
+          list-style: none;
+          padding-left: 15px;
+
+          hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0),
+              rgba(255, 255, 255, 0.75),
+              rgba(0, 0, 0, 0)
+            );
+          }
+          li {
+            color: #fefefe;
+            font-family: 'Verdana';
+            text-align: center;
+          }
+        }
+        .portData {
+          background-color: #323d41;
+          height: 90%;
+          margin-top: 7.5%;
+          border-radius: 5px;
+          width: 90%;
+          list-style: none;
+          padding-left: 15px;
+          color: #febd16;
+
+          hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0),
+              rgba(255, 255, 255, 0.75),
+              rgba(0, 0, 0, 0)
+            );
+          }
+          li {
+            font-family: 'Verdana';
+          }
+        }
+      }
+    }
+    .mySwitch {
+      background-color: #323d41;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+  }
+  #descriptionTRUE {
+    font-family: monospace;
+    display: block;
+    margin-bottom: 3px;
+  }
+  #descriptionFALSE {
+    font-family: monospace;
+    display: none;
+  }
+}
