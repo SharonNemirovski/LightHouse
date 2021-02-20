@@ -1,9 +1,11 @@
 import './App.css';
+import InOneHere from './InOneHere'
+
 
 function App() {
   return (
     <div className="App">
-      <h1>light house</h1>
+      <InOneHere />
     </div>
   );
 }

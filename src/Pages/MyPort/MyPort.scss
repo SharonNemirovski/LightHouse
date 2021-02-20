@@ -1,0 +1,312 @@
+body {
+  background-color: #d8dfe5;
+}
+
+.Main {
+  width: 93vw;
+  overflow: hidden;
+
+  .header {
+    height: 5vh;
+    width: 30vw;
+    background-color: #627b85;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 1.5vh;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+
+  .fullDashContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .Switch {
+      background-color: #fefefe;
+      height: auto;
+      width: 72vw;
+      box-shadow: 0 12px 18px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      background-color: #f4f5f7a8;
+      backdrop-filter: blur(5px);
+      .wrapper {
+        display: flex;
+        justify-content: center;
+
+        .portsName {
+          text-align: center;
+        }
+
+        ul {
+          list-style: none;
+          display: grid;
+          grid-auto-flow: column;
+          grid-template-rows: repeat(2, 1fr);
+          padding-inline-start: 0px;
+          li {
+            margin: 1px;
+          }
+          .pic {
+            margin-right: 3vw;
+          }
+          .PortStatus {
+            img {
+              width: 1.7vw;
+              height: 2.5vh;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    //############ MyPort dash DIV ##############
+    .dataHolder {
+      display: grid;
+      width: 72vw;
+      height: auto;
+      margin-top: 1.5vh;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 1.5vh;
+      .portTable {
+        display: grid;
+        border-radius: 5px;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0;
+        .portArt {
+          background-color: #627b85;
+          height: auto;
+          width: 100%;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          display: flex;
+          flex-direction: column;
+          color: #fefefe;
+          font-family: "Verdana";
+          text-align: center;
+          padding-bottom: 1.5vh;
+          hr {
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background-image: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0),
+              rgba(255, 255, 255, 0.75),
+              rgba(0, 0, 0, 0)
+            );
+          }
+          .IconHolder {
+            display: grid;
+            width: 100%;
+            height: auto;
+            .Icon {
+              align-self: center;
+              justify-self: center;
+              color: #fefefe;
+              height: 30px;
+              width: 30px;
+            }
+          }
+        }
+        .portData {
+          background-color: #627b85;
+          height: auto;
+          width: 100%;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          display: flex;
+          flex-direction: column;
+          color: #febd16;
+          font-family: "Verdana";
+          text-align: center;
+          padding-bottom: 1.5vh;
+          hr {
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background-image: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0),
+              rgba(255, 255, 255, 0.75),
+              rgba(0, 0, 0, 0)
+            );
+          }
+          .IconHolder {
+            display: grid;
+            width: 100%;
+            height: auto;
+            .Icon {
+              align-self: center;
+              justify-self: center;
+              color: #febd16;
+              height: 30px;
+              width: 30px;
+            }
+          }
+        }
+      }
+    }
+    .mySwitch {
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      .SwitchDataContainer {
+        display: grid;
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0vh;
+        .SwitchDataTable {
+          background-color: #627b85;
+          height: auto;
+          width: 100%;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          display: grid;
+          grid-template-rows: repeat(5, 1fr);
+          padding-top: 1.5vh;
+          padding-bottom: 1vh;
+          color: #fefefe;
+          font-family: "Verdana";
+          justify-content: center;
+          hr {
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background-image: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0),
+              rgba(255, 255, 255, 0.75),
+              rgba(0, 0, 0, 0)
+            );
+          }
+        }
+        .SwitchData {
+          background-color: #627b85;
+          height: auto;
+          width: 100%;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          display: grid;
+          grid-template-rows: repeat(5, 1fr);
+          padding-top: 1.5vh;
+          padding-bottom: 1vh;
+          color: #fefefe;
+          font-family: "Verdana";
+          justify-content: center;
+          hr {
+            border: 0;
+            height: 1px;
+            width: 100%;
+            background-image: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0),
+              rgba(255, 255, 255, 0.75),
+              rgba(0, 0, 0, 0)
+            );
+          }
+        }
+      }
+      .SwitchOtherData {
+        margin-top: 1vh;
+        background-color: #627b85;
+        height: 100%;
+        width: auto;
+        border-radius: 5px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 1vh;
+        padding-bottom: 0px;
+        padding-top: 0vh;
+        h3 {
+          font-family: "Verdana";
+          color: #ffffff;
+          margin-bottom: 1vh;
+          margin-top: 1vh;
+          margin-bottom: 1.5vh;
+        }
+        span {
+          //also css for the slider
+          color: #febd16;
+        }
+        .VlanConfigureContainer {
+          width: auto;
+          height: auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          border-radius: 9px;
+          .ConfInputs {
+            width: auto;
+            height: auto;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 1vh;
+            align-items: center;
+            justify-items: center;
+            .PortRangeSlider {
+              width: 50%;
+            }
+            .VlanSelector {
+              color: #febd16;
+              width: 50%;
+            }
+          }
+          .ChoiceViewer {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            color: #fefefe;
+            font-family: "Verdana";
+            text-align: start;
+            h3 {
+              font-size: small;
+            }
+            hr {
+              border: 0;
+              height: 1px;
+              width: 100%;
+              background-image: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0),
+                rgba(255, 255, 255, 0.75),
+                rgba(0, 0, 0, 0)
+              );
+            }
+          }
+        }
+        .ButtonHolder {
+          display: flex;
+          flex-direction: column;
+          margin-top: 1vh;
+          padding-bottom: 1vh;
+          .ConfButton {
+            grid-column: 2/3;
+            width: 30%;
+            height: 100%;
+            align-self: center;
+            height: auto;
+            color: #febd16;
+            border: 2px solid #febd16;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    #descriptionTRUE {
+      font-family: monospace;
+      display: block;
+      margin-bottom: 3px;
+    }
+    #descriptionFALSE {
+      font-family: monospace;
+      display: none;
+    }
+  }
+}
