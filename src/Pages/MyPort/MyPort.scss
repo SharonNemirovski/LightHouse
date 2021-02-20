@@ -73,7 +73,7 @@ body {
         border-radius: 5px;
         height: auto;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 0;
+        grid-gap: 0.5vh;
         .portArt {
           background-color: #627b85;
           height: auto;
@@ -107,6 +107,7 @@ body {
               color: #fefefe;
               height: 30px;
               width: 30px;
+              cursor: pointer;
             }
           }
         }
@@ -143,6 +144,7 @@ body {
               color: #febd16;
               height: 30px;
               width: 30px;
+              cursor: pointer;
             }
           }
         }
@@ -158,7 +160,7 @@ body {
         height: 100%;
         width: 100%;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 0vh;
+        grid-gap: 0.5vh;
         .SwitchDataTable {
           background-color: #627b85;
           height: auto;
