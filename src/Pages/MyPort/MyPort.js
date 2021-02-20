@@ -38,7 +38,6 @@ export default function MyPort() {
     return `Fa0/${Value}` 
   }
   const HandlePortRange = (event , Range) =>{
-    console.log(Range);
     setPortRange(Range)
   }
   function getPortStatus(i, q) {
@@ -135,7 +134,7 @@ export default function MyPort() {
                     <h3>MAC Address</h3>
                   <hr></hr>
                   <div className = "IconHolder">
-                   <MdInfoOutline className = "Icon"/>
+                   <MdInfoOutline className = "Icon" onClick = {()=>{console.log("info");}}/>
                   </div>
                 </div>
                 <div className="portData">
@@ -150,7 +149,7 @@ export default function MyPort() {
                     <h3>{PortData.MAC ? PortData.MAC : '-'}</h3>
                     <hr></hr>
                     <div className = "IconHolder">
-                   <MdRefresh className = "Icon"/>
+                   <MdRefresh className = "Icon" onClick = {()=>{console.log("refresh");}}/>
                   </div>
                 </div>
               </div>
