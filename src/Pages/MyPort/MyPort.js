@@ -12,6 +12,8 @@ import Swords180 from '../../assests/Ports/Swords180.png';
 import {MdRefresh , MdInfoOutline} from "react-icons/md"
 import Slider from '@material-ui/core/Slider';
 import Select from '@material-ui/core/Select';
+import  {FaSearch}  from "react-icons/fa";
+
 
 export default function MyPort() {
   const [PortData, SetPortData] = useState({
@@ -70,7 +72,12 @@ export default function MyPort() {
     <div>
       <div className="Main">
         <div className="header">
-          <div className="search"></div>
+          <div className="search">
+            <div className="box">
+              <input type="text" placeholder="..של המתג IP הכנס כתובת"></input>
+              <div className="click" for="check"><FaSearch/></div>
+            </div>
+          </div>
         </div>
         <div className = "fullDashContainer">
         <div className="Switch">
