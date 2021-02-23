@@ -25,11 +25,11 @@ body {
     .search {
       margin: 0;
       padding: 0;
-      input[type='checkbox'] {
+      input[type="checkbox"] {
         display: none;
       }
       .box {
-        display:flex;
+        display: flex;
         margin: 0 auto;
         margin-top: 5vh;
         margin-bottom: 1.5vh;
@@ -48,7 +48,6 @@ body {
           cursor: pointer;
           transition: 0.5s;
           box-shadow: -5px -5px 8px #edeff1, 5px 5px 10px #cacfd8;
-          
         }
         .click:hover {
           box-shadow: -10px -10px 15px #edeff1, 10px 10px 15px #cacfd8;
@@ -114,9 +113,8 @@ body {
               cursor: pointer;
               transition: 0.1s;
             }
-            img:hover{
+            img:hover {
               transform: scale(1.1);
-
             }
           }
         }
@@ -145,7 +143,7 @@ body {
           display: flex;
           flex-direction: column;
           color: #fefefe;
-          font-family: 'Verdana';
+          font-family: "Verdana";
           text-align: center;
           padding-bottom: 1.5vh;
           hr {
@@ -182,7 +180,7 @@ body {
           display: flex;
           flex-direction: column;
           color: #febd16;
-          font-family: 'Verdana';
+          font-family: "Verdana";
           text-align: center;
           padding-bottom: 1.5vh;
           hr {
@@ -234,7 +232,7 @@ body {
           padding-top: 1.5vh;
           padding-bottom: 1vh;
           color: #fefefe;
-          font-family: 'Verdana';
+          font-family: "Verdana";
           justify-content: center;
           hr {
             border: 0;
@@ -259,7 +257,7 @@ body {
           padding-top: 1.5vh;
           padding-bottom: 1vh;
           color: #fefefe;
-          font-family: 'Verdana';
+          font-family: "Verdana";
           justify-content: center;
           hr {
             border: 0;
@@ -287,7 +285,7 @@ body {
         padding-bottom: 0px;
         padding-top: 0vh;
         h3 {
-          font-family: 'Verdana';
+          font-family: "Verdana";
           color: #ffffff;
           margin-bottom: 1vh;
           margin-top: 1vh;
@@ -325,7 +323,7 @@ body {
             display: flex;
             flex-direction: column;
             color: #fefefe;
-            font-family: 'Verdana';
+            font-family: "Verdana";
             text-align: start;
             h3 {
               font-size: small;
