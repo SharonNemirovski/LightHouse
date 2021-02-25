@@ -2,6 +2,12 @@ import React from 'react';
 
 export const PortsData = [
   {
+    switchName : "SW-USR-1-217R",
+    version: "C2960-X 48PS",
+    PoeSupport : "NO"
+  },
+  [
+  {
     name: 'fa0/1',
     status: 'good',
     MAC: '1860.24f6.f349',
@@ -365,4 +371,23 @@ export const PortsData = [
     vlan: '508',
     vlanSEG: '206.13.1.0/24',
   },
-];
+],
+[
+  {
+    vlan : '80',
+    segment: '80.132.5.0/24'
+  },
+  {
+    vlan : '2001',
+    segment: '180.12.5.0/24'
+  },
+  {
+    vlan : '508',
+    segment: '106.0.4.0/24'
+  },
+  {
+    vlan : '805',
+    segment: '132.0.4.0/24'
+  }
+]
+]
