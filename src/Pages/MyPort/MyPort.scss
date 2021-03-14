@@ -1,21 +1,26 @@
 body {
-  background-color: #d8dfe5;
-  background-image: url(../../assests/background/network.jpg);
+  background-color: #ffffff;
+  //background-image: url(../../assests/background/network.jpg);
   background-repeat: no-repeat;
   background-origin: content-box;
   background-attachment: fixed;
   background-position: center;
   background-size: 100vw 100vh;
+  margin: 0px;
 }
 
 .Main {
   width: 93vw;
   overflow: hidden;
-
-  .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .fullDashContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    padding: 1vw;
     .search {
       margin: 0;
       padding: 0;
@@ -42,7 +47,7 @@ body {
         justify-content: center;
         align-content: center;
         color: gray;
-        box-shadow: -10px -10px 15px #edeff1, 10px 10px 15px #cacfd8;
+        box-shadow: -5px -5px 8px #edeff1, 5px 5px 10px #cacfd8;
         transition: 0.5s;
 
         .IPinput {
@@ -79,23 +84,15 @@ body {
         box-shadow: -10px -10px 40px #edeff1, 10px 10px 40px #cacfd8;
       }
     }
-  }
-
-  .fullDashContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     .Switch {
-      height: auto;
-      width: 72vw;
-      box-shadow: 0 12px 18px 0 rgba(0, 0, 0, 0.2);
+      margin-top: 2vh;
       border-radius: 5px;
-      backdrop-filter: blur(4px);
+      border: 1.5px solid #323d41;
+      padding-left: 1.5vw;
+      padding-right: 1.5vw;
       .wrapper {
         display: flex;
         justify-content: center;
-
         .portsName {
           text-align: center;
         }
@@ -126,246 +123,100 @@ body {
         }
       }
     }
-    //############ MyPort dash DIV ##############
-    .dataHolder {
+    .SwitchData {
+      margin-top: 4vh;
       display: grid;
-      width: 72vw;
-      height: auto;
-      margin-top: 1.5vh;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 1.5vh;
-      .portTable {
-        display: grid;
-        border-radius: 5px;
-        height: auto;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 0.5vh;
-        .portArt {
-          background-color: #627b85;
-          height: auto;
-          width: 100%;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-          display: flex;
-          flex-direction: column;
-          color: #fefefe;
-          font-family: "Verdana";
-          text-align: center;
-          padding-bottom: 1.5vh;
-          hr {
-            border: 0;
-            height: 1px;
-            width: 100%;
-            background-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 0),
-              rgba(255, 255, 255, 0.75),
-              rgba(0, 0, 0, 0)
-            );
-          }
-          .IconHolder {
-            display: grid;
-            width: 100%;
-            height: auto;
-            .Icon {
-              align-self: center;
-              justify-self: center;
-              color: #fefefe;
-              height: 30px;
-              width: 30px;
-              cursor: pointer;
-            }
-          }
-        }
-        .portData {
-          background-color: #627b85;
-          height: auto;
-          width: 100%;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          display: flex;
-          flex-direction: column;
-          color: #febd16;
-          font-family: "Verdana";
-          text-align: center;
-          padding-bottom: 1.5vh;
-          hr {
-            border: 0;
-            height: 1px;
-            width: 100%;
-            background-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 0),
-              rgba(255, 255, 255, 0.75),
-              rgba(0, 0, 0, 0)
-            );
-          }
-          .IconHolder {
-            display: grid;
-            width: 100%;
-            height: auto;
-            .Icon {
-              align-self: center;
-              justify-self: center;
-              color: #febd16;
-              height: 30px;
-              width: 30px;
-              cursor: pointer;
-            }
-          }
-        }
-      }
-    }
-    .mySwitch {
-      display: flex;
-      flex-direction: column;
-      border-radius: 5px;
-      .SwitchDataContainer {
-        display: grid;
-        border-radius: 5px;
-        height: 100%;
+      grid-template-columns: auto auto;
+      grid-gap: 1vw;
+      width: 100%;
+      .PortData {
         width: 100%;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 0.5vh;
-        .SwitchDataTable {
-          background-color: #627b85;
-          height: auto;
-          width: 100%;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
+        background-color: transparent;
+        border-radius: 5px;
+        border: 1.5px solid #323d41;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        .PortTableHeader {
           display: grid;
-          grid-template-rows: repeat(5, 1fr);
-          padding-top: 1.5vh;
-          padding-bottom: 1vh;
-          color: #fefefe;
-          font-family: "Verdana";
-          justify-content: center;
-          hr {
-            border: 0;
-            height: 1px;
-            width: 100%;
-            background-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 0),
-              rgba(255, 255, 255, 0.75),
-              rgba(0, 0, 0, 0)
-            );
+          grid-template-columns: repeat(5, 1fr);
+          width: 100%;
+          background-color: #323d41;
+          h3 {
+            font-size: 16px;
+            font-family: sans-serif;
+            color: white;
           }
         }
-        .SwitchData {
-          background-color: #627b85;
-          height: auto;
-          width: 100%;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
+        .PortsTableData {
           display: grid;
-          grid-template-rows: repeat(5, 1fr);
-          padding-top: 1.5vh;
-          padding-bottom: 1vh;
-          color: #fefefe;
-          font-family: "Verdana";
-          justify-content: center;
-          hr {
-            border: 0;
-            height: 1px;
-            width: 100%;
-            background-image: linear-gradient(
-              to right,
-              rgba(0, 0, 0, 0),
-              rgba(255, 255, 255, 0.75),
-              rgba(0, 0, 0, 0)
-            );
+          grid-template-columns: repeat(5, 1fr);
+          width: 100%;
+          h2 {
+            font-size: 16px;
+            font-family: sans-serif;
           }
         }
       }
-      .SwitchOtherData {
-        margin-top: 1vh;
-        background-color: #627b85;
-        height: 100%;
-        width: auto;
+      .OtherData {
+        width: 100%;
+        background-color: transparent;
         border-radius: 5px;
+        border: 1.5px solid #323d41;
         display: grid;
-        grid-template-rows: 80% 20%;
-        padding: 1vh;
-        padding-bottom: 0px;
-        h3 {
-          font-family: "Verdana";
-          color: #ffffff;
-          margin-bottom: 1vh;
-          margin-top: 1vh;
-          margin-bottom: 1.5vh;
-        }
-        span {
-          //also css for the slider
-          color: #febd16;
-        }
-        .VlanConfigureContainer {
-          width: auto;
-          height: auto;
+        grid-template-rows: 1fr 1fr;
+        .OtherDataHeader {
+          width: 100%;
           display: grid;
-          grid-template-columns: 1fr 1fr;
-          border-radius: 9px;
-          .ConfInputs {
-            width: auto;
-            height: auto;
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            grid-gap: 1vh;
-            align-items: center;
-            justify-items: center;
-            .PortRangeSlider {
-              width: 50%;
-            }
-            .VlanSelector {
-              color: #febd16;
-              width: 50%;
-            }
-          }
-          .ChoiceViewer {
-            width: auto;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: #fefefe;
-            font-family: "Verdana";
-            text-align: start;
-            h3 {
-              font-size: small;
-            }
-            hr {
-              border: 0;
-              height: 1px;
-              width: 100%;
-              background-image: linear-gradient(
-                to right,
-                rgba(0, 0, 0, 0),
-                rgba(255, 255, 255, 0.75),
-                rgba(0, 0, 0, 0)
-              );
-            }
+          grid-template-columns: repeat(3, 1fr);
+          background-color: #323d41;
+          h3 {
+            font-size: 16px;
+            font-family: sans-serif;
+            color: white;
           }
         }
-        .ButtonHolder {
-          display: flex;
-          flex-direction: column;
-          margin-top: 1vh;
-          padding-bottom: 1vh;
-          .ConfButton {
-            grid-column: 2/3;
-            width: 30%;
-            height: 100%;
-            align-self: center;
-            height: auto;
-            color: #febd16;
-            border: 2px solid #febd16;
-            border-radius: 8px;
-            text-align: center;
-            cursor: pointer;
+        .OtherDataTableData {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          h2 {
+            font-size: 16px;
+            font-family: sans-serif;
           }
         }
       }
     }
+    .ConfOptions {
+      padding-top: 1vh;
+      padding-bottom: 1vw;
+      margin-top: 4vh;
+      width: 100%;
+      background-color: transparent;
+      border-radius: 5px;
+      border: 1.5px solid #323d41;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      justify-items: center;
+      .PortRangeSlider {
+        width: 50%;
+      }
+      .VlanSelector {
+        width: 50%;
+      }
+      .RestartPortButton {
+        text-align: center;
+        background-color: #febd16;
+        width: 50%;
+        height: 45%;
+      }
+      .ConfigButton {
+        width: 50%;
+        height: 45%;
+        background-color: #febd16;
+      }
+    }
+    //############ MyPort dash DIV ##############
     #descriptionTRUE {
       font-family: monospace;
       display: block;

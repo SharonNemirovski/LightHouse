@@ -17,15 +17,15 @@ import  {FaSearch}  from "react-icons/fa";
 
 export default function MyPort() {
   const [PortData, SetPortData] = useState({
-    vlan: '',
-    status: '',
-    portName: '',
-    MAC: '',
-    vlanSEG: '',
+    vlan: '-',
+    status: '-',
+    portName: '-',
+    MAC: '-',
+    vlanSEG: '-',
   });
   const [SwitchData, SetSwitchData] = useState({
     SwitchName: PortsData[0].switchName,
-    Version: PortsData[0].version,
+    Model: PortsData[0].version,
     POEsupport: PortsData[0].PoeSupport,
   });
   const [VlanSegment , setVlanSegment] = useState("Vlan לא נבחר")
@@ -46,6 +46,11 @@ export default function MyPort() {
     //remember to change the Fa0/? in match to the switch ports names
     return `Fa0/${Value}` 
   }
+  const ConfigPorts = () =>{
+    //make post req to backend here
+    console.log("posst req to backend");
+  }
+
   const HandlePortRange = (event , Range) =>{
     setPortRange(Range)
   }
@@ -81,19 +86,16 @@ export default function MyPort() {
   }
 
   return (
-    <div>
       <div className="Main">
-        <div className="header">
-          <div className="search">
-          <div className="box">
-              <div className="click" for="check"><FaSearch/></div>
-              <input maxLength = {15} className = "IPinput" type="text" placeholder="..של המתג IP הכנס כתובת"></input>
-          </div>
-          </div>
-        </div>
         <div className = "fullDashContainer">
-        <div className="Switch">
-          <div className="wrapper">
+            <div className = "search">
+              <div className="box">
+                  <div className="click" for="check"><FaSearch/></div>
+                  <input maxLength = {15} className = "IPinput" type="text" placeholder="..של המתג IP הכנס כתובת"></input>
+              </div>
+            </div>
+            <div className="Switch">
+                <div className="wrapper">
             <ul>
               {PortsData[1].map((item, index) => {
                 return (
@@ -137,61 +139,45 @@ export default function MyPort() {
               })}
             </ul>
           </div>
-        </div>
-        {viewPort && (
-          <div className="dataHolder">
-              <div className="portTable">
-                <div className="portArt">           
-                    <h3>Port Name</h3>            
-                  <hr></hr>            
-                    <h3>Port Status</h3>             
-                  <hr></hr>               
-                    <h3>Vlan</h3>                 
-                  <hr></hr>                 
-                    <h3>Vlan Prefix</h3>                
-                  <hr></hr>
-                    <h3>MAC Address</h3>
-                  <hr></hr>
-                  <div className = "IconHolder">
-                   <MdInfoOutline className = "Icon" onClick = {()=>{console.log("info");}}/>
+            </div>
+            <div className="SwitchData">
+                  <div className="PortData">
+                    <div className = "PortTableHeader">
+                      <h3>Port Name</h3>
+                      <h3>Link Status</h3>
+                      <h3>Mac Address</h3>
+                      <h3>Vlan</h3>
+                      <h3>Vlan Prefix</h3>
+                    </div>
+                    <div className ="PortsTableData">
+                      <h2>{PortData.portName}</h2>
+                      <h2>{PortData.status=== ''?'not connected':PortData.status}</h2>
+                      <h2>{PortData.MAC === ''?'-':PortData.MAC}</h2>
+                      <h2>{PortData.vlan}</h2>
+                      <h2>{PortData.vlanSEG}</h2>
+                    </div>
                   </div>
-                </div>
-                <div className="portData">
-                    <h3>{PortData.portName ? PortData.portName : '-'}</h3>
-                  <hr></hr>
-                    <h3>{PortData.status ? PortData.status : '-'}</h3>
-                  <hr></hr>
-                    <h3>{PortData.vlan ? PortData.vlan : '-'}</h3>
-                  <hr></hr>
-                    <h3>{PortData.vlanSEG ? PortData.vlanSEG : '-'}</h3>
-                  <hr></hr>
-                    <h3>{PortData.MAC ? PortData.MAC : '-'}</h3>
-                    <hr></hr>
-                    <div className = "IconHolder">
-                   <MdRefresh className = "Icon" onClick = {()=>{console.log("refresh");}}/>
+                  <div className="OtherData">
+                    <div className="OtherDataHeader">
+                        <h3>Switch Name</h3>
+                        <h3>Switch Model</h3>
+                        <h3>POE Support</h3>
+                    </div>
+                    <div className = "OtherDataTableData">
+                        <h2>{SwitchData.SwitchName}</h2>
+                        <h2>{SwitchData.Model}</h2>
+                        <h2>{SwitchData.POEsupport}</h2>
+                    </div>
                   </div>
-                </div>
-              </div>
-            <div className="mySwitch">
-              <div className = "SwitchDataContainer">
-              <div className = "SwitchDataTable"> 
-                    <span>Name</span>
-              <hr></hr>
-                    <span>Version</span>
-              <hr></hr>
-                    <span>POE Support</span>
-              </div>             
-                <div className = "SwitchData"> 
-                   <span>{SwitchData.SwitchName}</span>
-              <hr></hr>
-                    <span>{SwitchData.Version}</span>
-              <hr></hr>
-                    <span>{SwitchData.POEsupport}</span>
-              </div>
-              </div>
-              <div className = "SwitchOtherData">
-                <div className = "VlanConfigureContainer">
-                    <div className = "ConfInputs">
+            </div>
+            <div className="ConfOptions">
+                      <select className="VlanSelector" onChange ={handleVlanSelect}>
+                        {PortsData[2].map((VlanOption)=>{
+                             return  <option  key={VlanOption.index} value={VlanOption.vlan}>{VlanOption.vlan}</option>
+                          })}
+                      </select>
+                      <h3>Vlan Segment: {VlanSegment}</h3>
+                      <div className = "RestartPortButton">Shut no shut</div>
                       <Slider
                         className = "PortRangeSlider"
                         value={PortsRange}
@@ -199,32 +185,10 @@ export default function MyPort() {
                         min={0}
                         max={48}//change this match to the swtich port number
                       />
-                      <Select className = "VlanSelector" onChange ={handleVlanSelect}>
-                         { 
-                         PortsData[2].map((VlanOption)=>{
-                             return <MenuItem key={VlanOption.index} value={VlanOption.vlan}>{VlanOption.vlan}</MenuItem>})
-                          }
-                      </Select>
-                    </div>
-                    <div className ="ChoiceViewer">
-                      <h3>Vlan - {Vlanname}</h3>            
-                      <hr></hr>            
-                      <h3>Vlan Prefix - {VlanSegment}</h3>             
-                      <hr></hr>               
-                      <h3>Port Range - {PortsRange[0]===PortsRange[1]?`Fa0/${PortsRange[0]}`: `Fa0/${PortsRange[0]} to Fa0/${PortsRange[1]}`}</h3> 
-                    </div>
-                </div>
-                <div className="ButtonHolder">
-                    <div className = "ConfButton">
-                      הגדר פורטים
-                    </div>
-                </div>
-              </div>
+                      <h3>Chosen Ports: {PortsRange[0]===PortsRange[1]?`Fa0/${PortsRange[0]}`: `Fa0/${PortsRange[0]} to Fa0/${PortsRange[1]}`}</h3>
+                      <div className = "ConfigButton">Configure ports</div>
             </div>
-          </div>
-        )}
         </div>
       </div>
-    </div>
   );
 }
