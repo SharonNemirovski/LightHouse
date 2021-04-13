@@ -1,0 +1,45 @@
+.landing {
+  height: 100vh;
+  width: 95vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  .middle {
+    display: block;
+    display: block;
+    height: 20vw;
+    width: 20vw;
+    img {
+      height: 20vw;
+      width: 20vw;
+    }
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+  }
+  .top {
+    display: block;
+    height: 20vw;
+    width: 20vw;
+    justify-self: center;
+    img {
+      height: 20vw;
+      width: 20vw;
+    }
+    -webkit-animation: slide-in-bottom 1s cubic-bezier(0.25, 0.3, 0.45, 0.7)
+      both;
+    animation: slide-in-bottom 1s cubic-bezier(0.25, 0.3, 0.45, 0.7) both;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    align-self: center;
+    justify-self: center;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 10;
+  }
+}

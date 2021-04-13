@@ -1,8 +1,88 @@
-body{
-    background-color: #D8DFE5;
+body {
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
 }
+.landing {
+  height: 100vh;
+  width: 95vw;
+  .backgroung {
+    background-color: #323d41;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    span {
+      position: absolute;
+      z-index: 3;
+      left: 3vh;
+      top: 3vh;
+      color: #323d41;
+      font-size: 65px;
+      font-weight: bold;
+      font-family: "Courier New", monospace;
+      align-self: center;
+    }
+    img {
+      position: absolute;
+      z-index: 3;
+      left: 20vh;
+      top: -50px;
+      height: 300px;
+      width: 300px;
+    }
 
-.Main{
-    height: 95vh;
-    width: 93vw;
+    .shortcuts {
+      position: absolute;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      height: 60px;
+      justify-items: center;
+      top: calc(100vh - 120px);
+      .shortCutHolder {
+        height: 60px;
+        width: 60px;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        padding: 10px;
+        border: 2px solid white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1ms;
+        .icon {
+          color: white;
+          height: 50px;
+          width: 50px;
+        }
+      }
+      .shortCutHolder:hover {
+        transform: scale(1.04);
+      }
+    }
+    .custom-shape-divider-top-1617367589 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      z-index: -1;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-top-1617367589 svg {
+      position: relative;
+      display: block;
+      width: calc(199% + 1.3px);
+      height: 500px;
+      transform: rotateY(180deg);
+    }
+
+    .custom-shape-divider-top-1617367589 .shape-fill {
+      //fill: #febd16;
+      fill: #d8dfe5;
+    }
+  }
 }

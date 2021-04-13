@@ -1,0 +1,11 @@
+.port {
+  display: grid;
+  width: 100%;
+  height: 45px;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: transparent;
+  align-content: center;
+  input {
+    justify-self: center;
+  }
+}

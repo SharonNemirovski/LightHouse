@@ -1,0 +1,55 @@
+.Switch {
+  z-index: -3222;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.2)
+  );
+  backdrop-filter: (5px);
+  height: 100%;
+  max-height: 17vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+  border-radius: 15px;
+  .portsName {
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+    padding-inline-start: 0px;
+    li {
+      margin: 1px;
+    }
+    .pic {
+      margin-right: 3vw;
+    }
+    .PortStatus {
+      img {
+        width: 1.7vw;
+        height: 2.5vh;
+        cursor: pointer;
+        transition: 0.1s;
+      }
+      img:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+#descriptionTRUE {
+  font-family: monospace;
+  display: block;
+  margin-bottom: 3px;
+}
+#descriptionFALSE {
+  font-family: monospace;
+  display: none;
+}
